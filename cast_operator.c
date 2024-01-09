@@ -24,6 +24,6 @@ int main()
     my_float = (float) my_ch;
     printf ("Convert from int my_ch=%c to my_int=%d and my_float=%f\n",my_ch, my_int, my_float);
 
-    exit(0);
+    return 0;
 
 }

@@ -1,8 +1,9 @@
 #define SIZE 6
+#include <stdio.h>
 
 void main()
 {
-int i;
+  int i;
   long int j;
   long k;
   short int l;
