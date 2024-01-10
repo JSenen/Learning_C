@@ -16,18 +16,22 @@ struct datos_almacenados
 
 int main()
 {
-    //declaracion
+    // Declaracion
     struct datos_almacenados datos_ejemplo;
-    
+
     datos_ejemplo.numero_real = 1;
     datos_ejemplo.numero_doble = 1.23;
-    datos_ejemplo.cadena[1] = "Prueba";
-    datos_ejemplo.tabla[0] = "Tabla";
 
-    printf("Datos ejemplo numero real %d \n", datos_ejemplo.numero_real);
-    printf("Datos ejemplo numero doble %f \n", datos_ejemplo.numero_doble);
-    printf("Datos ejemplo cadena %s \n", datos_ejemplo.cadena[1]);
-   
+    // Corregir la asignación de la cadena
+    snprintf(datos_ejemplo.cadena, sizeof(datos_ejemplo.cadena), "%s", "Prueba");
+
+    // Corregir la asignación de la tabla
+    datos_ejemplo.tabla[0] = 42;  // Asignar un valor entero a la tabla
+
+    printf("Datos ejemplo numero real %f \n", datos_ejemplo.numero_real);  // Cambiado a %f para coincidir con el tipo de dato
+    printf("Datos ejemplo numero doble %lf \n", datos_ejemplo.numero_doble);  // Cambiado a %lf para coincidir con el tipo de dato
+    printf("Datos ejemplo cadena %s \n", datos_ejemplo.cadena);
+    printf("Datos ejemplo tabla[0] %d \n", datos_ejemplo.tabla[0]);
 
     return 0;
 }
